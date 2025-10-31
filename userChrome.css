@@ -1,0 +1,83 @@
+:root {
+  --tab-height: 30px;
+  --group-height-padding: 3px;
+  --background-height: calc(var(--tab-height) - 1px);
+}
+
+/* Hiding space name */
+.zen-current-workspace-indicator {
+  display: none !important;
+}
+
+/* Compacting pinned folders and tabs */
+.zen-workspace-tabs-section {
+  padding-top: 4px !important;
+}
+.tab-group-label-container {
+  height: calc(var(--tab-height) + var(--group-height-padding)) !important;
+  margin-bottom: calc(var(--group-height-padding) * -1) !important;
+}
+.pinned-tabs-container-separator {
+  margin-bottom: -8px !important;
+}
+
+/* Compacting tabs */
+.tabbrowser-tab:not([glance-id]):not([split-view]) {
+  max-height: var(--tab-height) !important;
+}
+.tabbrowser-tab:not([glance-id]):not([split-view]) .tab-background {
+  min-height: var(--background-height) !important;
+  max-height: var(--background-height) !important;
+}
+.tab-audio-button {
+  margin-top: 0px !important;
+}
+
+/* Compacting New Tab button */
+#tabs-newtab-button {
+  min-height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+}
+
+/* Grey out unloaded tabs */
+.tabbrowser-tab[pending] .tab-icon-image,
+.tabbrowser-tab[pending] .tab-label-container {
+  opacity: 0.6 !important;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+/* Moving container incidator to the left */
+.tabbrowser-tab[usercontextid] .tab-context-line {
+  position: absolute !important;
+  top: 1px !important;
+  left: -2px !important;
+  height: 105% !important;
+}
+
+/* Coloring incative spaces */
+#zen-workspaces-button toolbarbutton {
+  filter: grayscale(0) !important;
+}
+
+/* Replace extension icons with glyphs */
+/* FoxyProxy */
+#foxyproxy_eric_h_jung-BAP .toolbarbutton-badge-stack .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/preferences/vpn-logo.svg") !important
+}
+/* FastStream Video Player */
+#faststream_andrews-BAP .toolbarbutton-badge-stack .toolbarbutton-icon {
+  list-style-image: url("chrome://global/skin/media/play-fill.svg") !important
+}
+/* 600% Sound Volume */
+#_c4b582ec-4343-438c-bda2-2f691c16c262_-BAP .toolbarbutton-badge-stack .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important
+}
+
+/* Moving extension badges to bottom */
+.unified-extensions-item-row-wrapper .toolbarbutton-badge {
+  position: absolute !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
