@@ -4,6 +4,11 @@
   --background-height: calc(var(--tab-height) - 1px);
 }
 
+/* Fix essentials padding with compacted tabs */
+.zen-essentials-container.zen-workspace-tabs-section {
+  padding-bottom: 4px !important;
+}
+
 /* Hiding space name */
 .zen-current-workspace-indicator {
   display: none !important;
